@@ -1,8 +1,8 @@
 // set up "chart"
-var svgWidh = 960;
+var svgWidth = 960;
 var svgHeight = 500;
 var margin = {top: 20, right: 40, bottom:60, left:100};
-var width = svgWidth - margin.left-margin.right;
+var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
 // Crete an SVG wrapper, append an SVG group that will hold our chart and shift the latter by left and top margins.
@@ -20,7 +20,7 @@ var chart = svg.append('g');
 d3.select(".chrat").append("div").attr("class","tooltip").style("opacity",0);
 
 // Retrieve data from CSV file and execute everything below
-d3.csv("../../data/data.csv", function(err,healthData){
+d3.csv("/datasets/data.csv", function(err,healthData){
   if(err) throw err;
 
   healthData.forEach(function(data){
